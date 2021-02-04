@@ -1,0 +1,22 @@
+/* reset */
+
+* {margin:0; 
+    padding:0;
+    box-sizing: border-box;}
+
+main {max-width: 1600px;}
+    
+
+header {width: 100%;
+    text-align: center;}
+
+section {width: 100%;}
+
+footer {position: fixed;
+    bottom:0;
+    width: 100%;}
+
+img {width: 150px;margin: 0 auto;}
+
+
+
