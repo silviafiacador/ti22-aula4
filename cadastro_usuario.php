@@ -2,26 +2,25 @@
   date_default_timezone_set('America/Sao_Paulo');
 ?>
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Cadastro de usuário</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <!-- Nosso Css -->
     <link rel="stylesheet" href="assets/css/estilo.css">
-    <link rel="icon" href="assets/img/login.png">
+    <link rel="icon" href="assets/img/cadastro.webp">
 </head>
 <body>
     <main class="container">
         <header>
             <h2>Senac</h2>
-            <img src="assets/img/login.png" width="150" height="150" alt="Silhueta de uma pessoa">
+            <img src="assets/img/cadastro.webp" width="150" height="150" alt="Formulário de cadastro de usuário">
             <br>
         </header>
         <section>
-            
             <!-- formulário -->
             <div class="row">  
               <!-- primeira coluna -->
@@ -29,7 +28,7 @@
               <!-- segunda coluna  -->
               <div class="col-6">
                 <!-- método padrão: get -->
-                <form method="post" action="valida_login.php">
+                <form method="post" action="atualiza_usuario.php">
                 <div class="form-col align-items-center">
                   <!-- usuário -->
                   <div class="col-auto mb-4">
@@ -39,10 +38,36 @@
                       <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
                       </svg>  
                       </div>
-                        <input type="text" class="form-control" placeholder="Usuário" name="usuario" maxlength="10">
+                        <input type="text" class="form-control" placeholder="Usuário" name="usuario" maxlength="10" required autofocus>
                     </div>
                   </div>
                   <!-- fim do usuário -->
+
+                  <!-- nome do usuário -->
+                  <div class="col-auto mb-4">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+                        <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
+                    </svg>
+                      </div>
+                        <input type="text" class="form-control" placeholder="Nome do usuário" name="nomeusuario" maxlength="80" required>
+                    </div>
+                  </div>
+                  <!-- fim do nome do usuário -->
+
+                  <!-- email -->
+                  <div class="col-auto mb-4">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
+</svg>
+                      </div>
+                        <input type="email" class="form-control" placeholder="Email" name="email" maxlength="80" required>
+                    </div>
+                  </div>
+                  <!-- fim do email -->
 
                   <!-- senha -->
                   <div class="col-auto">
@@ -54,21 +79,30 @@
 </svg></div>
                       </div>
                       <input type="password" class="form-control" placeholder="Senha"
-                      name="senha" minlength="4" maxlength="8">
+                      name="senha" minlength="4" maxlength="8" required>
                     </div>
                   </div>
                   <!-- fim senha -->
+
+                  <!-- confirmar senha -->
+                  <div class="col-auto">
+                    <div class="input-group mb-4">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+  <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+</svg></div>
+                      </div>
+                      <input type="password" class="form-control" placeholder="Confirme a senha"
+                      name="confirmasenha" minlength="4" maxlength="8">
+                    </div>
+                  </div>
+                  <!-- fim confirmar senha -->
                   
                   <div class="col-auto">
-                    <button type="submit" class="btn btn-primary mb-2" title="Envia informações para o servidor">Logar</button>
+                    <button type="submit" class="btn btn-primary mb-2" title="Envia informações para o servidor">Enviar</button>
 
-                    <a href="cadastro_usuario.php" class="btn btn-success mb-2" title="Cadastra um novo usuário">Cadastre-se</a>
-
-                    <a href="" class="btn btn-dark mb-2" title="Recadastra a senha do usuário">Esqueci a senha</a>
                     <button type="reset" class="btn btn-danger mb-2" title="Remove informações digitadas">Apagar</button>
 
-          
-                  
                   </div>
                 </div>
               </form>
@@ -76,13 +110,13 @@
             </div>
             
 
+
         </section>
-        
+
         <?php
-          include_once "footer.php";
+            include "footer.php";
         ?>
     </main>
-    
 
     <!-- Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

@@ -10,5 +10,4 @@
                 <p><?php echo date("d/m/y"); ?></p>
               </div>
           </div>
-
 </footer>
