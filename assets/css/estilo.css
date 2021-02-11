@@ -18,3 +18,4 @@ footer {position: fixed;
 
 img {width: 150px;margin: 0 auto;}
 input:focus {border-color:blueviolet !important;}
+.carousel-item {width:100%; height: 400px;}

@@ -79,7 +79,8 @@
 </svg></div>
                       </div>
                       <input type="password" class="form-control" placeholder="Senha"
-                      name="senha" minlength="4" maxlength="8" required>
+                      name="senha" id="senha"
+                      minlength="4" maxlength="8" required>
                     </div>
                   </div>
                   <!-- fim senha -->
@@ -93,7 +94,7 @@
 </svg></div>
                       </div>
                       <input type="password" class="form-control" placeholder="Confirme a senha"
-                      name="confirmasenha" minlength="4" maxlength="8">
+                      name="confirmasenha" id="confirmasenha" minlength="4" maxlength="8">
                     </div>
                   </div>
                   <!-- fim confirmar senha -->
@@ -117,6 +118,22 @@
             include "footer.php";
         ?>
     </main>
+    <script>
+      document.querySelector('#confirmasenha').addEventListener('blur', {
+      let senha=document.getElementById('senha').value;
+      let confirmasenha=document.getElementById('confirmasenha').value;
+      if (senha==confirmasenha) {
+          document.getElementById('confirmasenha').style.border-color='green';
+          document.getElementById('senha').style.border-color='green';
+      }
+      else {
+        document.getElementById('confirmasenha').style.border-color='red';
+        document.getElementById('senha').style.border-color='red';
+      }
+     
+      })
+
+    </script>
 
     <!-- Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
