@@ -2,7 +2,7 @@
   date_default_timezone_set('America/Sao_Paulo');
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +12,7 @@
     <!-- Nosso Css -->
     <link rel="stylesheet" href="assets/css/estilo.css">
     <link rel="icon" href="assets/img/cadastro.webp">
+    
 </head>
 <body>
     <main class="container">
@@ -94,13 +95,14 @@
 </svg></div>
                       </div>
                       <input type="password" class="form-control" placeholder="Confirme a senha"
-                      name="confirmasenha" id="confirmasenha" minlength="4" maxlength="8">
+                      name="confirmasenha" id="confirmarsenha" minlength="4" maxlength="8">
                     </div>
                   </div>
                   <!-- fim confirmar senha -->
+                
                   
                   <div class="col-auto">
-                    <button type="submit" class="btn btn-primary mb-2" title="Envia informações para o servidor">Enviar</button>
+                    <button type="submit" id="enviar" class="btn btn-primary mb-2" title="Envia informações para o servidor">Enviar</button>
 
                     <button type="reset" class="btn btn-danger mb-2" title="Remove informações digitadas">Apagar</button>
 
@@ -118,23 +120,9 @@
             include "footer.php";
         ?>
     </main>
-    <script>
-      document.querySelector('#confirmasenha').addEventListener('blur', {
-      let senha=document.getElementById('senha').value;
-      let confirmasenha=document.getElementById('confirmasenha').value;
-      if (senha==confirmasenha) {
-          document.getElementById('confirmasenha').style.border-color='green';
-          document.getElementById('senha').style.border-color='green';
-      }
-      else {
-        document.getElementById('confirmasenha').style.border-color='red';
-        document.getElementById('senha').style.border-color='red';
-      }
-     
-      })
-
-    </script>
-
+   
+    <!-- meu arquivo js -->
+    <script src="assets/js/script.js"></script>
     <!-- Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
